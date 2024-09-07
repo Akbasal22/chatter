@@ -1,10 +1,11 @@
 import './App.css';
 import { Route, createBrowserRouter, createRoutesFromElements, RouterProvider } from "react-router-dom";
+import Layout from './layouts/layout/Layout';
 
 function App() {
 
   const router = createBrowserRouter(createRoutesFromElements(
-    <Route>
+    <Route element={<Layout />} path='/'>
 
     </Route>
   ))
