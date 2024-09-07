@@ -1,7 +1,10 @@
 import React from 'react'
+import Welcome from '../../components/Welcome/Welcome'
 
 export default function WelcomePage() {
     return (
-        <div>WelcomePage</div>
+        <div className='page-container'>
+            <Welcome />
+        </div>
     )
 }
