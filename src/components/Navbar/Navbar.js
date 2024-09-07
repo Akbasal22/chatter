@@ -5,7 +5,12 @@ import './Navbar.css'
 export default function Navbar() {
     return (
         <div className='navbar'>
-            Chatter
+
+            <span className='title'>Chatter</span>
+
+            <span className='author'>
+                Made by Akbasal22
+            </span>
         </div>
     )
 }
