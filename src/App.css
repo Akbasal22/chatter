@@ -1,6 +1,10 @@
 :root {
     --primary-color: #F9F9F9;
-    --secondary-color: #313886;
+    --secondary-color: #2b2b2b;
     --accent-color: #4E342E;
     --error-color: #B00020;
+}
+
+.page-container {
+    
 }
