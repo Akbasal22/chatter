@@ -10,7 +10,7 @@ export default function LoginForm() {
             <img className='login-img' src={image} />
 
             <form className='login-form'>
-                <span className='login-form-text'>Login</span>
+                <span className='login-form-text'>Welcome</span>
                 <input type='email' placeholder='E-mail'></input>
                 <input type='password' placeholder='Password'></input>
                 <button>Log in</button>

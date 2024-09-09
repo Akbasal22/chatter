@@ -1,0 +1,43 @@
+.chatroom {
+    height: 100%;
+    width: 100%;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+}
+
+.chatroom-messages {
+    height: 90%;
+    padding: 2rem;
+    overflow-y: scroll;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    align-items: flex-start;
+}
+
+.chatroom-form{
+    height: 10%;
+    display: flex;
+}
+
+.chatroom-form input {
+    width: 80%;
+    border: none;
+    background-color: var(--secondary-color);
+    padding-left: 1rem;
+    color: white;
+}
+
+.chatroom-form button {
+    width: 20%;
+    border: none;
+    background-color: var(--accent-color);
+    cursor: pointer;
+    transition: all 0.1s ease;
+}
+
+
+.chatroom-form button:hover {
+    background-color: #304845;
+}
