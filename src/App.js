@@ -4,14 +4,16 @@ import Layout from './layouts/layout/Layout';
 import WelcomePage from './pages/WelcomePage/WelcomePage';
 import LoginPage from './pages/LoginPage/LoginPage'
 import ChatPage from './pages/ChatPage/ChatPage'
+import loginLoader from './loaders/loginLoader';
+import chatLoader from './loaders/chatLoader';
 
 function App() {
 
   const router = createBrowserRouter(createRoutesFromElements(
     <Route element={<Layout />} path='/'>
       <Route element={<WelcomePage />} path='' />
-      <Route element={<LoginPage />} path='login' />
-      <Route element={<ChatPage />} path='chat' />
+      <Route element={<LoginPage />} path='login' loader={loginLoader} />
+      <Route element={<ChatPage />} path='chat' loader={async () => await chatLoader()} />
     </Route>
   ))
 

@@ -1,28 +1,27 @@
 import { createSlice } from '@reduxjs/toolkit'
 
 
-function serializeUser(user) {
+export function serializeUser(user) {
     return {
         uid: user.uid,
         displayName: user.displayName,
         email: user.email,
         photoURL: user.photoURL,
-        isLoggedin: true,
+        isLoggedIn: true,
     }
 }
 
 export const userSlice = createSlice({
     name: 'user',
-    initialState: { isLoggedIn: false },
+    initialState: sessionStorage.getItem('user') || JSON.stringify({ isLoggedIn: false }),
     reducers: {
         login: (state, action) => {
-            const serializedUser = JSON.stringify(serializeUser(action.payload));
-            sessionStorage.setItem('user', serializedUser);
-            state.user = serializedUser;
+            sessionStorage.setItem('user', action.payload);
+            state.user = action.payload;
         },
         logout: (state) => {
-            state.user = { isLoggedIn: false },
-                sessionStorage.clear();
+            state.user = { isLoggedIn: false };
+            sessionStorage.clear();
         }
     }
 })
