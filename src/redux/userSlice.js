@@ -13,7 +13,7 @@ export function serializeUser(user) {
 
 export const userSlice = createSlice({
     name: 'user',
-    initialState: sessionStorage.getItem('user') || { isLoggedIn: false },
+    initialState: JSON.parse(sessionStorage.getItem('user')) || { isLoggedIn: false },
     reducers: {
         login: (state, action) => {
             const user = JSON.parse(action.payload);

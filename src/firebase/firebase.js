@@ -3,14 +3,21 @@ import {
     getAuth,
     createUserWithEmailAndPassword,
     signInWithEmailAndPassword,
+    updateProfile,
     signOut,
-    onAuthStateChanged,
     GoogleAuthProvider,
     signInWithPopup
 } from "firebase/auth"
+import { uniqueNamesGenerator, adjectives, colors, animals } from 'unique-names-generator';
 
 
-//config
+
+//configs
+
+const config = {
+    dictionaries: [adjectives, colors, animals]
+}
+
 
 const firebaseConfig = {
     apiKey: "AIzaSyCkqaNO2Qw2Bm_T7rEejGRxM5VgYOZeCVc",
@@ -21,8 +28,8 @@ const firebaseConfig = {
     appId: "1:860623320629:web:fe5064678984025b86237c"
 };
 
-const app = initializeApp(firebaseConfig);
-const auth = getAuth(app);
+export const app = initializeApp(firebaseConfig);
+export const auth = getAuth(app);
 const provider = new GoogleAuthProvider();
 
 //login functions
@@ -40,7 +47,10 @@ export async function authLoginWithEmailAndPassword(email, password) {
 export async function authCreateAccount(email, password) {
     try {
         const userCredential = await createUserWithEmailAndPassword(auth, email, password);
-        return userCredential.user;
+        await updateProfile(auth.currentUser, {
+            displayName: uniqueNamesGenerator(config), photoURL: ' https://picsum.photos/200'
+        });
+        return auth.currentUser;
     } catch (error) {
         throw error;
     }

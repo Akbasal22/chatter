@@ -28,7 +28,7 @@ export default function LoginForm() {
     }
 
     function dispatchToRedux(user) {
-        dispatch(login(JSON.stringify(serializeUser(user))))
+        dispatch(login(JSON.stringify(serializeUser(user))));
     }
 
     //login functions
