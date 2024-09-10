@@ -7,22 +7,19 @@ export default function ChatRoom() {
 
     const dummy = useRef();
     const messageRef = useRef(null);
+
+
     async function handleSend(e) {
         e.preventDefault();
         const message = messageRef.current.value;
-        sendMessage(message);
+        await sendMessage(message);
         messageRef.current.value = "";
     }
 
     const [messages, setMessages] = useState([]);
-
     useEffect(() => {
-        const unsubscribe = getSnapshot(setMessages);
-        return () => {
-            if (unsubscribe) unsubscribe();
-        };
-    }, []);
-
+        getSnapshot(setMessages);
+    }, [])
 
     useEffect(() => {
         if (dummy.current) {

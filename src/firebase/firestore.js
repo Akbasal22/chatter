@@ -16,13 +16,14 @@ const db = getFirestore(app);
 // message body, photo, uid, timestamp
 
 export async function sendMessage(message) {
+    const localTimestamp = new Date();
     try {
         const docRef = await addDoc(collection(db, 'messages'), {
             body: message,
             uid: auth.currentUser.uid,
             displayName: auth.currentUser.displayName,
             photoURL: auth.currentUser.photoURL,
-            sentAt: serverTimestamp(),
+            sentAt: localTimestamp,
         });
     } catch (error) {
         console.log(error);
@@ -30,7 +31,7 @@ export async function sendMessage(message) {
 }
 
 
-export function getSnapshot(setMessages) {
+export async function getSnapshot(setMessages) {
     try {
         return onSnapshot(collection(db, 'messages'), (querySnapshot) => {
             const messagesArray = [];
