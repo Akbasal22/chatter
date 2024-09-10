@@ -60,7 +60,16 @@ export default function LoginForm() {
 
     }
 
-
+    async function signInWithGoogle(e) {
+        e.preventDefault();
+        try {
+            const user = await authSignInWithGoogle();
+            dispatchToRedux(user);
+            navigate('/chat');
+        } catch (error) {
+            setError(error);
+        }
+    }
 
 
 
@@ -80,7 +89,7 @@ export default function LoginForm() {
                 <button onClick={signInWithEmail}>Log in</button>
                 <button onClick={createAccount}>Create Account</button>
                 <hr />
-                <button>Login with Google</button>
+                <button onClick={signInWithGoogle}>Login with Google</button>
             </form>
 
         </div>

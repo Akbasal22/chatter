@@ -13,15 +13,16 @@ export function serializeUser(user) {
 
 export const userSlice = createSlice({
     name: 'user',
-    initialState: sessionStorage.getItem('user') || JSON.stringify({ isLoggedIn: false }),
+    initialState: sessionStorage.getItem('user') || { isLoggedIn: false },
     reducers: {
         login: (state, action) => {
+            const user = JSON.parse(action.payload);
             sessionStorage.setItem('user', action.payload);
-            state.user = action.payload;
+            return user;
         },
         logout: (state) => {
-            state.user = { isLoggedIn: false };
             sessionStorage.clear();
+            return { isLoggedIn: false };
         }
     }
 })
