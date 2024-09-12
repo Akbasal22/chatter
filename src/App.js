@@ -15,7 +15,7 @@ function App() {
       <Route element={<LoginPage />} path='login' loader={loginLoader} />
       <Route element={<ChatPage />} path='chat' loader={async () => await chatLoader()} />
     </Route>
-  ), { basename: "/chatter-gitpages" });
+  ));
 
   return (
     <div className="App">
