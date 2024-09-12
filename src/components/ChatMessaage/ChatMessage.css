@@ -24,8 +24,11 @@
     border-radius: 2rem;
     color: white;
     min-width: 2rem;
-    text-wrap: stable;
+    text-wrap: wrap;
+    word-break: break-word; 
+    overflow-wrap: break-word; 
 }
+
 
 .sent {
     align-self: flex-end;

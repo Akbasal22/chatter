@@ -1,20 +1,17 @@
 .welcome {
     height: 100%;
-padding: 5rem 0 5rem 0;
+gap: 2rem;
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 5rem;
+    flex-direction: column;
     }
 
-.text-container {
-    display: flex;
-    flex-direction: column;
-}
 
 .welcome-title{
     font-size: 2.5rem;
     font-weight: bold;
+    text-align: center;
 }
 
 .accent {
@@ -27,36 +24,8 @@ padding: 5rem 0 5rem 0;
     font-size: 1.2rem;
 }
 
-
-
-.welcome-login {
-    position: relative;
-}
-
-.welcome-img {
-    border-radius: 16px;
-    width: 100%;
-    height: 100%;
-    transition: all 0.3s ease;   
-}
-
-.welcome-login:hover .welcome-img{
-    opacity: 0.4;
-}
-
-.welcome-login:hover .welcome-login-btn{
-    opacity: 1;
-    transform: translatex(0px);
-}
-
 .welcome-login-btn{
-    position: absolute;
-    height: 15%;
-    width: 60%;
-    top: 42.5%;
-    left: 20%;
-    opacity: 0;
-    transform: translatex(-20px);
+    padding: 1.5rem 4rem 1.5rem 4rem;
     transition: all 0.3s ease;
     border: none;
     border-radius: 8px;
@@ -64,8 +33,11 @@ padding: 5rem 0 5rem 0;
     background-color: var(--secondary-color);
     color: white;
     cursor: pointer;
+    transition: all 0.3s ease;
 }
 
 .welcome-login-btn:hover{
-    box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px;
-}
+    filter: brightness(160%);
+}   
+
+

@@ -79,7 +79,7 @@ export default function LoginForm() {
     return (
         <div className='login-form-container'>
 
-            <img className='login-img' src={image} />
+            {window.innerWidth > 768 && <img className='login-img' src={image} />}
 
             <form className='login-form'>
                 <span className='login-form-text'>Welcome</span>

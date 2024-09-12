@@ -35,9 +35,19 @@
     background-color: var(--accent-color);
     cursor: pointer;
     transition: all 0.1s ease;
+    color: white;
 }
 
 
 .chatroom-form button:hover {
-    background-color: #304845;
+    filter: brightness(80%);
+}
+
+.chatroom-form button:disabled {
+    filter: brightness(60%);
+    color: white;
+    cursor:auto;
+}
+.chatroom-form button:disabled:hover {
+    background-color: var(--accent-color);
 }

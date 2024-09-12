@@ -12,18 +12,9 @@ export default function Welcome() {
 
     return (
         <div className='welcome'>
-
-            <div className='text-container'>
-                <span className='welcome-title'> <span className='accent'>Connect</span> with total strangers! </span>
-                <span className='welcome-description'>What could go wrong?</span>
-            </div>
-
-            <div className='welcome-login'>
-                <img className='welcome-img' src={stranger} />
-                <button className='welcome-login-btn' onClick={loginClick}>Login</button>
-            </div>
-
-
+            <span className='welcome-title'> <span className='accent'>Connect</span> with total strangers! </span>
+            <span className='welcome-description'>What could go wrong?</span>
+            <button className='welcome-login-btn' onClick={loginClick}>Login</button>
         </div>
     )
 }
